@@ -47,7 +47,7 @@
                 "Mawuekom\\CustomUser\\CustomUserServiceProvider"
             ],
             "aliases": {
-                "CustomUser": "Mawuekom\\CustomUser\\Facades\\CustomUserFacade"
+                "CustomUser": "Mawuekom\\CustomUser\\Facades\\CustomUser"
             }
         }
     }
