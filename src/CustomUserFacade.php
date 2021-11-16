@@ -1,13 +1,13 @@
 <?php
 
-namespace Mawuekom\LaravelCustomUser;
+namespace Mawuekom\CustomUser;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Mawuekom\LaravelCustomUser\Skeleton\SkeletonClass
+ * @see \Mawuekom\CustomUser\Skeleton\SkeletonClass
  */
-class LaravelCustomUserFacade extends Facade
+class CustomUserFacade extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -16,6 +16,6 @@ class LaravelCustomUserFacade extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'laravel-custom-user';
+        return 'custom-user';
     }
 }

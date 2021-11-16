@@ -2,7 +2,6 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/mawuekom/laravel-custom-user.svg?style=flat-square)](https://packagist.org/packages/mawuekom/laravel-custom-user)
 [![Total Downloads](https://img.shields.io/packagist/dt/mawuekom/laravel-custom-user.svg?style=flat-square)](https://packagist.org/packages/mawuekom/laravel-custom-user)
-![GitHub Actions](https://github.com/mawuekom/laravel-custom-user/actions/workflows/main.yml/badge.svg)
 
 This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
 
@@ -46,7 +45,3 @@ If you discover any security related issues, please email seddorephraim7@gmail.c
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-## Laravel Package Boilerplate
-
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).

@@ -5,7 +5,7 @@
         "mawuekom",
         "laravel-custom-user"
     ],
-    "homepage": "https://github.com/mawuekom/laravel-custom-user",
+    "homepage": "https://github.com/mawuva/laravel-custom-user",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0",
+        "php": "^7.2|^7.3|^7.4|^8.0",
         "illuminate/support": "^8.0"
     },
     "require-dev": {
@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Mawuekom\\LaravelCustomUser\\": "src"
+            "Mawuekom\\CustomUser\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Mawuekom\\LaravelCustomUser\\Tests\\": "tests"
+            "Mawuekom\\CustomUser\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -44,10 +44,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Mawuekom\\LaravelCustomUser\\LaravelCustomUserServiceProvider"
+                "Mawuekom\\CustomUser\\CustomUserServiceProvider"
             ],
             "aliases": {
-                "LaravelCustomUser": "Mawuekom\\LaravelCustomUser\\LaravelCustomUserFacade"
+                "CustomUser": "Mawuekom\\CustomUser\\CustomUserFacade"
             }
         }
     }
