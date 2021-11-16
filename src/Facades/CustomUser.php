@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @see \Mawuekom\CustomUser\Skeleton\SkeletonClass
  */
-class CustomUserFacade extends Facade
+class CustomUser extends Facade
 {
     /**
      * Get the registered name of the component.

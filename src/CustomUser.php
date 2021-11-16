@@ -2,8 +2,6 @@
 
 namespace Mawuekom\CustomUser;
 
-use Illuminate\Support\Facades\Hash;
-
 class CustomUser
 {
     /**
@@ -16,7 +14,7 @@ class CustomUser
     private function handlePassword(string $password = null): string
     {
         return ($password !== null)
-                    ? Hash::make()
-                    : bcrypt($password);
+                    ? bcrypt($password)
+                    : bcrypt(config('custom-user.default_password'));
     }
 }
