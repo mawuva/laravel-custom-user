@@ -20,17 +20,24 @@ class StoreUserAction
         $user = app(config('custom-user.user.model'));
 
         $user ->name        = $storeUserDTO ->name;
+        $user ->email       = $storeUserDTO ->email;
+        $user ->password    = CustomUser::handlePassword($storeUserDTO ->password);
 
-        if (config('custom-user.attributes.first_name.enabled')) {
+        if (get_attribute('first_name', 'enabled') && $storeUserDTO ->first_name !== null) {
             $user ->first_name  = $storeUserDTO ->first_name;
         }
 
-        if (config('custom-user.attributes.phone_number.enabled')) {
+        if (get_attribute('phone_number', 'enabled') && $storeUserDTO ->phone_number !== null) {
             $user ->phone_number  = $storeUserDTO ->phone_number;
         }
 
-        $user ->email       = $storeUserDTO ->email;
-        $user ->password    = CustomUser::handlePassword($storeUserDTO ->password);
+        if (get_attribute('gender', 'enabled') && $storeUserDTO ->gender !== null) {
+            $user ->{get_attribute('gender', 'name')}  = $storeUserDTO ->gender;
+        }
+
+        if (get_attribute('agree_with_policy_and_terms', 'enabled') && $storeUserDTO ->agree_with_policy_and_terms !== null) {
+            $user ->{get_attribute('agree_with_policy_and_terms', 'name')}  = now();
+        }
 
         $user ->save();
 
