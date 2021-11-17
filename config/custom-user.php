@@ -46,14 +46,10 @@ return [
 
         'first_name'    => [
             'enabled'   => true,
-            'name'      => 'first_name',
-            'type'      => 'string'
         ],
 
         'phone_number'  => [
             'enabled'   => true,
-            'name'      => 'phone_number',
-            'type'      => 'string'
         ],
 
         /**

@@ -42,3 +42,19 @@ if (!function_exists('resolve_key')) {
         }   
     }
 }
+
+if (!function_exists('get_attribute')) {
+    /**
+     * Get attribute config property
+     * 
+     * @param string $attribute
+     * @param string $property
+     * 
+     * @return string|null
+     */
+    function get_attribute(string $attribute, string $property) {
+        return (config('custom-user.attributes.'.$attribute.'.'.$property) !== null)
+                ? config('custom-user.attributes.'.$attribute.'.'.$property)
+                : config('custom-user.attributes.extra.'.$attribute.'.'.$property);
+    }
+}

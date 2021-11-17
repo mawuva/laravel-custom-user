@@ -2,6 +2,7 @@
 
 namespace Mawuekom\CustomUser;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class CustomUserServiceProvider extends ServiceProvider
@@ -20,6 +21,8 @@ class CustomUserServiceProvider extends ServiceProvider
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'custom-user');
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
+
+        $this ->checkAttributeAvailability();
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
@@ -57,6 +60,16 @@ class CustomUserServiceProvider extends ServiceProvider
         // Register the main class to use with the facade
         $this->app->singleton('custom-user', function () {
             return new CustomUser;
+        });
+    }
+
+    /**
+     * Check attributes availability
+     */
+    private function checkAttributeAvailability()
+    {
+        Blade::if('enabledAttribute', function ($attribute) {
+            return get_attribute($attribute, 'enabled');
         });
     }
 }
