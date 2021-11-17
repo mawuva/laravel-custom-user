@@ -17,11 +17,14 @@ class CheckUserCredentialsAction
     {
         $user = app(config('custom-user.user.model'));
 
-        $result = $user ->where('email', $credentials)
-                        ->orWhere('name', $credentials);
+        $result = $user ->where('email', $credentials);
 
         if (get_attribute('phone_number', 'enabled')) {
             $result ->orWhere('phone_number', $credentials);
+        }
+
+        if (get_attribute('username', 'enabled')) {
+            $result ->orWhere('username', $credentials);
         }
 
         return $result ->first();

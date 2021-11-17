@@ -21,7 +21,8 @@
         "illuminate/database": "^8.0",
         "spatie/data-transfer-object": "^2.8",
         "mawuekom/laravel-model-uuid": "^2.0",
-        "mawuekom/laravel-password-history": "^1.4"
+        "mawuekom/laravel-password-history": "^1.4",
+        "doctrine/dbal": "^3.1"
     },
     "require-dev": {
         "orchestra/testbench": "^6.0",
