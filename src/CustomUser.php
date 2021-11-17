@@ -34,4 +34,18 @@ class CustomUser
             $model ->save();
         }
     }
+
+    /**
+     * Resolve password changed at
+     *
+     * @param \Illuminate\Database\Eloquent\Model $model
+     *
+     * @return void
+     */
+    public function updatePasswordChangedAt(Model $model)
+    {
+        if (password_changed_is_enabled_and_exists()) {
+            $model ->password_changed_at = now();
+        }
+    }
 }
