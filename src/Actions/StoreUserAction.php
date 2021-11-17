@@ -25,6 +25,10 @@ class StoreUserAction
             $user ->first_name  = $storeUserDTO ->first_name;
         }
 
+        if (config('custom-user.attributes.phone_number.enabled')) {
+            $user ->phone_number  = $storeUserDTO ->phone_number;
+        }
+
         $user ->email       = $storeUserDTO ->email;
         $user ->password    = CustomUser::handlePassword($storeUserDTO ->password);
 
