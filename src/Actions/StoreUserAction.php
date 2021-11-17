@@ -20,6 +20,11 @@ class StoreUserAction
         $user = app(config('custom-user.user.model'));
 
         $user ->name        = $storeUserDTO ->name;
+
+        if (config('custom-user.attributes.first_name.enabled')) {
+            $user ->first_name  = $storeUserDTO ->first_name;
+        }
+
         $user ->email       = $storeUserDTO ->email;
         $user ->password    = CustomUser::handlePassword($storeUserDTO ->password);
 
