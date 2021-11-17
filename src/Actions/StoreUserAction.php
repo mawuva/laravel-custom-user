@@ -27,6 +27,10 @@ class StoreUserAction
             $user ->first_name  = $storeUserDTO ->first_name;
         }
 
+        if (get_attribute('username', 'enabled') && $storeUserDTO ->username !== null) {
+            $user ->username  = $storeUserDTO ->username;
+        }
+
         if (get_attribute('phone_number', 'enabled') && $storeUserDTO ->phone_number !== null) {
             $user ->phone_number  = $storeUserDTO ->phone_number;
         }

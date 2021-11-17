@@ -10,6 +10,7 @@ class StoreUserDTO extends DataTransferObject
     public string $email;
     public string|null $password;
     public string|null $first_name;
+    public string|null $username;
     public string|null $phone_number;
     public string|null $gender;
     public string|null $agree_with_policy_and_terms;

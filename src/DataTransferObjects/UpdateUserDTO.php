@@ -9,6 +9,7 @@ class UpdateUserDTO extends DataTransferObject
     public string $name;
     public string $email;
     public string|null $first_name;
+    public string|null $username;
     public string|null $phone_number;
     public string|null $gender;
 }

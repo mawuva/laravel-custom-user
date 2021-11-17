@@ -25,6 +25,10 @@ class UpdateUserAction
             $user ->first_name  = $updateUserDTO ->first_name;
         }
 
+        if (get_attribute('username', 'enabled') && $updateUserDTO ->username !== null) {
+            $user ->username  = $updateUserDTO ->username;
+        }
+
         if (get_attribute('phone_number', 'enabled') && $updateUserDTO ->phone_number !== null) {
             $user ->phone_number  = $updateUserDTO ->phone_number;
         }
