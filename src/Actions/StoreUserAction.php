@@ -41,6 +41,10 @@ class StoreUserAction
 
         $user ->save();
 
+        if (config('custom-user.password_history.enabled')) {
+            $user ->updatePasswordHistory();
+        }
+
         return $user;
     }
 }

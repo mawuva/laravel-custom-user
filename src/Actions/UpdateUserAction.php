@@ -5,7 +5,7 @@ namespace Mawuekom\CustomUser\Actions;
 use Illuminate\Database\Eloquent\Model;
 use Mawuekom\CustomUser\DataTransferObjects\UpdateUserDTO;
 
-class StoreUserAction
+class UpdateUserAction
 {
     /**
      * Execute action
