@@ -11,7 +11,7 @@ class CustomUser
      *
      * @return string
      */
-    private function handlePassword(string $password = null): string
+    public function handlePassword(string $password = null): string
     {
         return ($password !== null)
                     ? bcrypt($password)
