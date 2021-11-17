@@ -33,7 +33,18 @@ return [
          * Important attributes that can almostly required
          */
 
+        'name'          => [
+            /**
+             * You can set user's name attribute as optional
+             */
+            'optional'  => false,
+        ],
+
         'first_name'    => [
+            'enabled'   => true,
+        ],
+
+        'username'      => [
             'enabled'   => true,
         ],
 
