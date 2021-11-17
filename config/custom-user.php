@@ -13,7 +13,7 @@ return [
     /**
      * User configuration
      */
-    'user'  => [
+    'user'      => [
         'model'     => App\Models\User::class,
         'slug'      => 'user',
         'table'     => [
@@ -24,11 +24,71 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Bunch of features or options to enable or disable.
+    |--------------------------------------------------------------------------
+    */
+
+    'enabled'   => [
+
+        
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Attributes or columns you can add to customize your users table
+    |--------------------------------------------------------------------------
+    */
+
+    'attributes'    => [
+        /**
+         * Important attributes that can almostly required
+         */
+
+        'first_name'    => [
+            'enabled'   => true,
+            'name'      => 'first_name',
+            'type'      => 'string'
+        ],
+
+        'phone_number'  => [
+            'enabled'   => true,
+            'name'      => 'phone_number',
+            'type'      => 'string'
+        ],
+
+        /**
+         * Extra attributes which are optional
+         */
+
+        'extra'         => [
+
+            'gender'    => [
+                'enabled'   => true,
+                'name'      => 'gender',
+                'type'      => 'string'
+            ],
+
+            'agree_with_policy_and_terms'    => [
+                'enabled'   => true,
+                'name'      => 'has_agreed_with_policy_and_terms_at',
+                'type'      => 'timestamp'
+            ],
+
+            'last_login'    => [
+                'enabled'   => true,
+                'name'      => 'last_login_at',
+                'type'      => 'string'
+            ],
+        ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Add uuid support
     |--------------------------------------------------------------------------
     */
 
-    'uuids' => [
+    'uuids'     => [
         'enabled'   => true,
         'column'    => '_id'
     ],
