@@ -16,6 +16,10 @@ return [
     'user'  => [
         'model'     => App\Models\User::class,
         'slug'      => 'user',
+        'table'     => [
+            'name'          => env('CUSTOM_USER_USERS_DATABASE_TABLE', 'users'),
+            'primary_key'   => env('CUSTOM_USER_USERS_DATABASE_TABLE_PRIMARY_KEY', 'id'),
+        ],
     ],
 
     /*
