@@ -58,12 +58,6 @@ return [
 
         'extra'         => [
 
-            'gender'    => [
-                'enabled'   => true,
-                'name'      => 'gender',
-                'type'      => 'string'
-            ],
-
             'agree_with_policy_and_terms'    => [
                 'enabled'   => true,
                 'name'      => 'has_agreed_with_policy_and_terms_at',
@@ -73,6 +67,12 @@ return [
             'last_login'    => [
                 'enabled'   => true,
                 'name'      => 'last_login_at',
+                'type'      => 'string'
+            ],
+
+            'gender'    => [
+                'enabled'   => true,
+                'name'      => 'gender',
                 'type'      => 'string'
             ],
         ],
