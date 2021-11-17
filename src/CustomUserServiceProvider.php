@@ -11,12 +11,14 @@ class CustomUserServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        require_once __DIR__.'/helpers.php';
+        
         /*
          * Optional methods to load your package assets
          */
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'custom-user');
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'custom-user');
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
 
         if ($this->app->runningInConsole()) {
