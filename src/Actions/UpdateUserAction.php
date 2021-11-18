@@ -3,6 +3,7 @@
 namespace Mawuekom\CustomUser\Actions;
 
 use Illuminate\Database\Eloquent\Model;
+use Mawuekom\CustomUser\Facades\CustomUser;
 use Mawuekom\CustomUser\DataTransferObjects\UpdateUserDTO;
 
 class UpdateUserAction
@@ -17,7 +18,7 @@ class UpdateUserAction
      */
     public function execute($id, UpdateUserDTO $updateUserDTO): Model
     {
-        $user = get_user_by_id($id);
+        $user = CustomUser::getUserById($id);
 
         $user ->name        = $updateUserDTO ->name;
         $user ->email       = $updateUserDTO ->email;
