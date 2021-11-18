@@ -10,13 +10,15 @@ class UpdateUserAction
     /**
      * Execute action
      *
+     * @param int|string $id
      * @param \Mawuekom\CustomUser\DataTransferObjects\UpdateUserDTO $updateUserDTO
      *
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function execute(UpdateUserDTO $updateUserDTO): Model
+    public function execute($id, UpdateUserDTO $updateUserDTO): Model
     {
-        $user = app(config('custom-user.user.model'));
+        $key = resolve_key('custom-user', config('custom-user.user.slug'), $id);
+        $user = app(config('custom-user.user.model')) ->where($key, '=', $id) ->first();
 
         $user ->name        = $updateUserDTO ->name;
         $user ->email       = $updateUserDTO ->email;
