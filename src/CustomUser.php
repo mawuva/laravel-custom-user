@@ -53,12 +53,14 @@ class CustomUser
      * Get user by id
      * 
      * @param int|string $id
+     * @param bool $inTrashed
+     * @param array $columns
      * 
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function getUserById($id, $inTrashed = false)
+    public function getUserById($id, $inTrashed = false, $columns = ['*'])
     {
         $key = resolve_key('custom-user', config('custom-user.user.slug'), $id, $inTrashed);
-        return app(config('custom-user.user.model')) ->where($key, '=', $id) ->first();
+        return app(config('custom-user.user.model')) ->where($key, '=', $id) ->first($columns);
     }
 }
