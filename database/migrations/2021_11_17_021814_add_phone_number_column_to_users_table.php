@@ -18,7 +18,13 @@ class AddPhoneNumberColumnToUsersTable extends Migration
 
         if ($phoneNumberEnabled) {
             Schema::table($usersTable, function (Blueprint $table) {
-                $table->string('phone_number') ->nullable() ->after('email_verified_at');
+                if (get_attribute('phone_number', 'unique')) {
+                    $table->string('phone_number') ->nullable() ->unique() ->after('email_verified_at');
+                }
+
+                else {
+                    $table->string('phone_number') ->nullable() ->after('email_verified_at');
+                }
             });
         }
     }

@@ -50,6 +50,7 @@ return [
 
         'phone_number'  => [
             'enabled'   => true,
+            'unique'    => false,
         ],
 
         /**
