@@ -61,6 +61,10 @@ class CustomUser
     public function getUserById($id, $inTrashed = false, $columns = ['*'])
     {
         $key = resolve_key('custom-user', config('custom-user.user.slug'), $id, $inTrashed);
-        return app(config('custom-user.user.model')) ->where($key, '=', $id) ->first($columns);
+        $data = app(config('custom-user.user.model')) ->where($key, '=', $id);
+
+        return ($inTrashed)
+                    ? $data ->withTrashed() ->first($columns)
+                    : $data ->first($columns);
     }
 }
