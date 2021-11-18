@@ -13,6 +13,25 @@ You can install the package via composer:
 composer require mawuekom/laravel-custom-user
 ```
 
+### Laravel <br/>
+
+After register the service provider to the **`providers`** array in **`config/app.php`**
+
+```php
+'providers' => [
+    ...
+    Mawuekom\CustomUser\CustomUserServiceProvider::class
+    ...
+];
+```
+<br/>
+
+Publish package
+
+```bash
+php artisan vendor:publish --provider="Mawuekom\CustomUser\CustomUserServiceProvider"
+```
+
 ## Usage
 
 ```php
