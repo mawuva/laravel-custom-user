@@ -48,4 +48,17 @@ class CustomUser
             $model ->password_changed_at = now();
         }
     }
+
+    /**
+     * Get user by id
+     * 
+     * @param int|string $id
+     * 
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function getUserById($id)
+    {
+        $key = resolve_key('custom-user', config('custom-user.user.slug'), $id);
+        return app(config('custom-user.user.model')) ->where($key, '=', $id) ->first();
+    }
 }
