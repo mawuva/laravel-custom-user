@@ -50,21 +50,37 @@ class CustomUser
     }
 
     /**
+     * Get user by field and value
+     * 
+     * @param string $attribute
+     * @param string $value
+     * @param bool   $inTrashed
+     * @param array  $columns
+     * 
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function getUserByField($field, $value = null, $inTrashed = false, $columns = ['*'])
+    {
+        $data = app(config('custom-user.user.model')) ->where($attribute, '=', $id);
+
+        return ($inTrashed)
+                    ? $data ->withTrashed() ->first($columns)
+                    : $data ->first($columns);
+    }
+
+    /**
      * Get user by id
      * 
      * @param int|string $id
-     * @param bool $inTrashed
-     * @param array $columns
+     * @param bool       $inTrashed
+     * @param array      $columns
      * 
      * @return \Illuminate\Database\Eloquent\Model
      */
     public function getUserById($id, $inTrashed = false, $columns = ['*'])
     {
         $key = resolve_key('custom-user', config('custom-user.user.slug'), $id, $inTrashed);
-        $data = app(config('custom-user.user.model')) ->where($key, '=', $id);
 
-        return ($inTrashed)
-                    ? $data ->withTrashed() ->first($columns)
-                    : $data ->first($columns);
+        return $this ->getUserByField($key, $id, $inTrashed, $columns);
     }
 }
