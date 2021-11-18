@@ -17,8 +17,7 @@ class UpdateUserAction
      */
     public function execute($id, UpdateUserDTO $updateUserDTO): Model
     {
-        $key = resolve_key('custom-user', config('custom-user.user.slug'), $id);
-        $user = app(config('custom-user.user.model')) ->where($key, '=', $id) ->first();
+        $user = get_user_by_id($id);
 
         $user ->name        = $updateUserDTO ->name;
         $user ->email       = $updateUserDTO ->email;
