@@ -56,9 +56,9 @@ class CustomUser
      * 
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function getUserById($id)
+    public function getUserById($id, $inTrashed = false)
     {
-        $key = resolve_key('custom-user', config('custom-user.user.slug'), $id);
+        $key = resolve_key('custom-user', config('custom-user.user.slug'), $id, $inTrashed);
         return app(config('custom-user.user.model')) ->where($key, '=', $id) ->first();
     }
 }

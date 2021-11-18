@@ -23,6 +23,7 @@ if (!function_exists('resolve_key')) {
      * @param string $config
      * @param string $entity
      * @param int|string $id
+     * @param bool $inTrashed
      * 
      * @return string
      */
