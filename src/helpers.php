@@ -58,3 +58,17 @@ if (!function_exists('get_attribute')) {
                 : config('custom-user.attributes.extra.'.$attribute.'.'.$property);
     }
 }
+
+if (!function_exists('get_user_by_id')) {
+    /**
+     * Get user by id
+     * 
+     * @param int|string $id
+     * 
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    function get_user_by_id(string $id) {
+        $key = resolve_key('custom-user', config('custom-user.user.slug'), $id);
+        return app(config('custom-user.user.model')) ->where($key, '=', $id) ->first();
+    }
+}
