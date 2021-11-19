@@ -25,7 +25,7 @@ if (!function_exists('resolve_key')) {
      * @param int|string $id
      * @param bool $inTrashed
      * 
-     * @return string
+     * @return string|null
      */
     function resolve_key(string $config, string $entity, $id = null, $inTrashed = false): string {
         $model          = config($config.'.'.$entity.'.model');
