@@ -61,7 +61,7 @@ class CustomUser
      */
     public function getUserByField($field, $value = null, $inTrashed = false, $columns = ['*'])
     {
-        $data = app(config('custom-user.user.model')) ->where($field, '=', $id);
+        $data = app(config('custom-user.user.model')) ->where($field, '=', $value);
 
         return ($inTrashed)
                     ? $data ->withTrashed() ->first($columns)
