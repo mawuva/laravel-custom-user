@@ -27,7 +27,7 @@ if (!function_exists('resolve_key')) {
      * 
      * @return string|null
      */
-    function resolve_key(string $config, string $entity, $id = null, $inTrashed = false): string {
+    function resolve_key(string $config, string $entity, $id = null, $inTrashed = false) {
         $model          = config($config.'.'.$entity.'.model');
         $uuidColumn     = config($config.'.uuids.column');
         $entityPK       = config($config.'.'.$entity.'.table.primary_key');
