@@ -76,6 +76,12 @@ return [
                 'name'      => 'gender',
                 'type'      => 'string'
             ],
+
+            'is_admin'    => [
+                'enabled'   => true,
+                'name'      => 'is_admin',
+                'type'      => 'boolean'
+            ],
         ],
     ],
 

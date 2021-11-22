@@ -39,6 +39,10 @@ class StoreUserAction
             $user ->{get_attribute('gender', 'name')}  = $storeUserDTO ->gender;
         }
 
+        if (get_attribute('is_admin', 'enabled') && $storeUserDTO ->is_admin !== null) {
+            $user ->{get_attribute('is_admin', 'name')}  = $storeUserDTO ->gender;
+        }
+
         if (get_attribute('agree_with_policy_and_terms', 'enabled') && $storeUserDTO ->agree_with_policy_and_terms !== null) {
             $user ->{get_attribute('agree_with_policy_and_terms', 'name')}  = now();
         }
