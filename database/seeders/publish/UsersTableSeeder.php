@@ -24,6 +24,7 @@ class UsersTableSeeder extends Seeder
                 'name'     => 'Admin',
                 'email'    => 'admin@admin.com',
                 'password' => bcrypt('password'),
+                'is_admin' =>1
             ]);
 
             echo "\e[32mSeeding:\e[0m CustomUser - DefaultUsersTableSeeder - User:admin@admin.com\r\n";
