@@ -19,10 +19,13 @@
         "php": "^7.2|^7.3|^7.4|^8.0",
         "illuminate/support": "^8.0",
         "illuminate/database": "^8.0",
+        "illuminate/console": "^8.0",
+        "illuminate/foundation": "^8.0",
         "spatie/data-transfer-object": "^2.8",
         "mawuekom/laravel-model-uuid": "^2.0",
         "mawuekom/laravel-password-history": "^1.4",
-        "doctrine/dbal": "^3.1"
+        "doctrine/dbal": "^3.1",
+        "symfony/console": "^5.4"
     },
     "require-dev": {
         "orchestra/testbench": "^6.0",
@@ -31,7 +34,7 @@
     "autoload": {
         "psr-4": {
             "Mawuekom\\CustomUser\\": "src",
-            "Mawuekom\\CustomUser\\Database\\Seeders": "database\\seeders"
+            "Mawuekom\\CustomUser\\Database\\Seeders\\": "database/seeders"
         }
     },
     "autoload-dev": {
