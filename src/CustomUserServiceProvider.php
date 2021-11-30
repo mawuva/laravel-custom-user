@@ -29,6 +29,10 @@ class CustomUserServiceProvider extends ServiceProvider
                 __DIR__.'/../config/custom-user.php' => config_path('custom-user.php'),
             ], 'config');
 
+            $this->publishes([
+                __DIR__.'/../database/seeders/publish' => database_path('seeders'),
+            ], 'seeders');
+
             // Publishing the views.
             /*$this->publishes([
                 __DIR__.'/../resources/views' => resource_path('views/vendor/custom-user'),
@@ -65,6 +69,8 @@ class CustomUserServiceProvider extends ServiceProvider
 
     /**
      * Check attributes availability
+     * 
+     * @return void
      */
     private function checkAttributeAvailability()
     {
