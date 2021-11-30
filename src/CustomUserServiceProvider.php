@@ -4,6 +4,7 @@ namespace Mawuekom\CustomUser;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Mawuekom\CustomUser\Commands\InstallCommand;
 
 class CustomUserServiceProvider extends ServiceProvider
 {
@@ -49,7 +50,9 @@ class CustomUserServiceProvider extends ServiceProvider
             ], 'lang');*/
 
             // Registering package commands.
-            // $this->commands([]);
+            $this->commands([
+                InstallCommand::class,
+            ]);
         }
     }
 
