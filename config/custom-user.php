@@ -106,4 +106,19 @@ return [
         'enabled'   => true,
         'column'    => '_id'
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Default Seeds
+    |--------------------------------------------------------------------------
+    |
+    | These are the default package seeds. You can seed the package built
+    | in seeds without having to seed them. These seed directly from
+    | the package. These are not the published seeds.
+    |
+    */
+
+    'defaultSeeds' => [
+        'UsersTableSeeder'  => env('CUSTOM_USER_SEED_DEFAULT_USERS', true),
+    ],
 ];
