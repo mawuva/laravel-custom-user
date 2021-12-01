@@ -20,7 +20,6 @@
         "illuminate/support": "^8.0",
         "illuminate/database": "^8.0",
         "illuminate/console": "^8.0",
-        "illuminate/foundation": "^8.0",
         "spatie/data-transfer-object": "^2.8",
         "mawuekom/laravel-model-uuid": "^2.0",
         "mawuekom/laravel-password-history": "^1.4",
