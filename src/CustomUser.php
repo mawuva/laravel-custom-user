@@ -79,7 +79,7 @@ class CustomUser
      */
     public function getUserById($id, $inTrashed = false, $columns = ['*'])
     {
-        $key = resolve_key('custom-user', config('custom-user.user.slug'), $id, $inTrashed);
+        $key = resolve_key(config('custom-user.user.model'), $id, $inTrashed);
 
         return $this ->getUserByField($key, $id, $inTrashed, $columns);
     }
