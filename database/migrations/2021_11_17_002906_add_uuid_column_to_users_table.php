@@ -17,7 +17,7 @@ class AddUuidColumnToUsersTable extends Migration
         $usersTablePK   = config('custom-user.user.table.primary_key');
 
         $uuidEnabled    = config('custom-user.uuids.enabled');
-        $uuidColumn     = config('custom-user.uuids.column');
+        $uuidColumn     = config('custom-user.uuids.column', '_id');
 
         if ($uuidEnabled && $uuidColumn !== null) {
             Schema::table($usersTable, function (Blueprint $table)
@@ -35,7 +35,7 @@ class AddUuidColumnToUsersTable extends Migration
     public function down()
     {
         $usersTable     = config('custom-user.user.table.name');
-        $uuidColumn     = config('custom-user.uuids.column');
+        $uuidColumn     = config('custom-user.uuids.column', '_id');
 
         Schema::table($usersTable, function (Blueprint $table) use ($uuidColumn) {
             $table->dropColumn($uuidColumn);

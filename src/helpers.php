@@ -8,7 +8,7 @@ if (!function_exists('uuid_is_enabled_and_has_column_defined')) {
      */
     function uuid_is_enabled_and_has_column_defined(): bool {
         $uuidEnabled    = config('custom-user.uuids.enabled');
-        $uuidColumn     = config('custom-user.uuids.column');
+        $uuidColumn     = config('custom-user.uuids.column', '_id');
 
         return ($uuidEnabled && $uuidColumn !== null)
                 ? true
@@ -29,7 +29,7 @@ if (!function_exists('resolve_key')) {
      */
     function resolve_key(string $config, string $entity, $id = null, $inTrashed = false) {
         $model          = config($config.'.'.$entity.'.model');
-        $uuidColumn     = config($config.'.uuids.column');
+        $uuidColumn     = config($config.'.uuids.column', '_id');
         $entityPK       = config($config.'.'.$entity.'.table.primary_key');
 
         if (config($config.'.uuids.enabled')) {

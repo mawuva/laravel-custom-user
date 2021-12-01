@@ -16,7 +16,7 @@ trait UserCustomization
      */
     public function uuidColumns(): array
     {
-        return [config('custom-user.uuids.column')];
+        return [config('custom-user.uuids.column', '_id')];
     }
 
     /**
