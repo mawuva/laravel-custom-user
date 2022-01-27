@@ -13,8 +13,8 @@ class SetNameAttributeAsOptionalInUsersTable extends Migration
      */
     public function up()
     {
-        $usersTable     = config('custom-user.user.table.optional');
-        $nameIsOptional = config('custom-user.attributes.name.enabled');
+        $usersTable     = config('custom-user.user.table');
+        $nameIsOptional = config('custom-user.attributes.name.optional');
 
         if ($nameIsOptional) {
             Schema::table($usersTable, function (Blueprint $table) {
