@@ -37,7 +37,7 @@ return [
             /**
              * You can set user's name attribute as optional
              */
-            'optional'  => false,
+            'optional'  => true,
         ],
 
         'first_name'    => [
