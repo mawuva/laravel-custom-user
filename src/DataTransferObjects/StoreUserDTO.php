@@ -6,7 +6,7 @@ use Spatie\DataTransferObject\DataTransferObject;
 
 class StoreUserDTO extends DataTransferObject
 {
-    public string $name;
+    public string|null $name;
     public string $email;
     public string|null $password;
     public string|null $first_name;
